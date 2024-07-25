@@ -1,0 +1,7 @@
+{
+  "name": "ScapeRoomFiesta",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
