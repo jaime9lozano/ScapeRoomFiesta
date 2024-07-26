@@ -23,6 +23,13 @@ export class HeaderComponent implements OnInit {
 
   finishScapeRoom() {
     localStorage.setItem('grupo', '0');
+    localStorage.setItem('prueba1', 'false');
+    localStorage.setItem('prueba2', 'false');
+    localStorage.setItem('prueba3', 'false');
+    localStorage.setItem('prueba4', 'false');
+    localStorage.setItem('prueba5', 'false');
+    localStorage.setItem('prueba6', 'false');
+    localStorage.setItem('prueba7', 'false');
     this.router.navigate(['/inicio']).then(() => {
       window.location.reload();
     });

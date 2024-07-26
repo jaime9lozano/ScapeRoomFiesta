@@ -30,8 +30,12 @@ export class BodyComponent implements OnInit {
     const grupo = Number(localStorage.getItem('grupo'));
 
     if (grupo > 0) {
-      // Mostrar todas las pruebas y quitar inicio
-      this.appPages = this.allPages.filter(page => page.url !== '/inicio');
+      // Mostrar todas las pruebas y quitar inicio, excluyendo las pruebas completadas
+      this.appPages = this.allPages.filter(page => {
+        if (page.url === '/inicio') return false;
+        const pruebaCompletada = localStorage.getItem(page.title.replace(' ', '').toLowerCase());
+        return !pruebaCompletada || pruebaCompletada === 'false';
+      });
     } else {
       // Mostrar solo inicio
       this.appPages = this.allPages.filter(page => page.url === '/inicio');

@@ -1,15 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-prueba1',
   templateUrl: './prueba1.page.html',
   styleUrls: ['./prueba1.page.scss'],
 })
-export class Prueba1Page implements OnInit {
+export class Prueba1Page {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
-  ngOnInit() {
+  markAsCompleted() {
+    localStorage.setItem('prueba1', 'true');
+    this.router.navigate(['/prueba2']).then(() => {
+      window.location.reload();
+    });
   }
 
 }
