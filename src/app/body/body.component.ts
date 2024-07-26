@@ -5,9 +5,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './body.component.html',
   styleUrls: ['./body.component.scss'],
 })
-export class BodyComponent  {
+export class BodyComponent implements OnInit {
 
-  public appPages = [
+  public appPages: Array<{ title: string, url: string, icon: string }> = [];
+
+  private allPages = [
     { title: 'Inicio', url: '/inicio', icon: 'home' },
     { title: 'Prueba 1', url: '/prueba1', icon: 'flask' },
     { title: 'Prueba 2', url: '/prueba2', icon: 'flask' },
@@ -19,5 +21,21 @@ export class BodyComponent  {
   ];
 
   constructor() { }
+
+  ngOnInit() {
+    this.updateMenu();
+  }
+
+  updateMenu() {
+    const grupo = Number(localStorage.getItem('grupo'));
+
+    if (grupo > 0) {
+      // Mostrar todas las pruebas y quitar inicio
+      this.appPages = this.allPages.filter(page => page.url !== '/inicio');
+    } else {
+      // Mostrar solo inicio
+      this.appPages = this.allPages.filter(page => page.url === '/inicio');
+    }
+  }
 
 }
