@@ -1,0 +1,45 @@
+.icon-col {
+  display: flex !important;
+  flex-direction: column-reverse;
+}
+
+ion-text {
+  margin: 0 0 0 10px;
+  font-family: 'Brush Script MT', cursive;
+  font-size: 2.5rem;
+}
+
+ion-img::part(image) {
+  height: 100%;
+  object-fit: contain;
+  /*border-radius: 50%;*/
+}
+
+@media (max-width: 768px) {
+  .desktop-title {
+    display: none;
+  }
+
+  .mobile-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    ion-text {
+      font-size: 1.2rem;
+      font-family: 'Brush Script MT', serif;
+    }
+  }
+
+  ion-item {
+    --padding-start: 0 !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+
+  ion-item::part(native) ion-text {
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+}

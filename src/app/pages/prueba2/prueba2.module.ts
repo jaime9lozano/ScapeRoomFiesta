@@ -4,16 +4,16 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { InicioPageRoutingModule } from './inicio-routing.module';
+import { Prueba2PageRoutingModule } from './prueba2-routing.module';
 
-import { InicioPage } from './inicio.page';
+import { Prueba2Page } from './prueba2.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    InicioPageRoutingModule
-  ],
+    Prueba2PageRoutingModule
+  ]
 })
-export class InicioPageModule {}
+export class Prueba2PageModule {}
