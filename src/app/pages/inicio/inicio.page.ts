@@ -10,6 +10,7 @@ export class InicioPage  {
   public grupos: number[] = [1, 2, 3, 4, 5];
   constructor(private router: Router) { }
   seleccionarGrupo(grupo: number) {
+    localStorage.setItem('tiempo', Date.now().toString());
     localStorage.setItem('grupo', grupo.toString());
     if (grupo === 1) {
       this.router.navigate(['/prueba1']).then(() => {

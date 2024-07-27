@@ -7,6 +7,10 @@
     <ion-text class="title">Scape Room</ion-text>
   </ion-item>
 
+  <ion-item class="ion-padding-end mobile-icon" slot="start" detail="false" lines="none">
+  <ion-text *ngIf="showTimeCounter">Tiempo transcurrido: {{ tiempoTranscurrido }}</ion-text>
+  </ion-item>
+
   <ion-buttons slot="end" *ngIf="showFinishButton">
     <ion-button (click)="finishScapeRoom()">
       Finalizar Scape Room
