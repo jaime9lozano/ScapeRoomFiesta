@@ -38,6 +38,10 @@ const routes: Routes = [
   {
     path: 'prueba7',
     loadChildren: () => import('./pages/prueba7/prueba7.module').then( m => m.Prueba7PageModule)
+  },
+  {
+    path: 'resolver',
+    loadChildren: () => import('./pages/resolver/resolver.module').then( m => m.ResolverPageModule)
   }
 ];
 

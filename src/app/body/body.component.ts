@@ -18,6 +18,7 @@ export class BodyComponent implements OnInit {
     { title: 'Prueba 5', url: '/prueba5', icon: 'flask' },
     { title: 'Prueba 6', url: '/prueba6', icon: 'flask' },
     { title: 'Prueba 7', url: '/prueba7', icon: 'flask' },
+    { title: 'Resolver', url: '/resolver', icon: 'checkmark-circle' }
   ];
 
   constructor() { }
@@ -29,16 +30,27 @@ export class BodyComponent implements OnInit {
   updateMenu() {
     const grupo = Number(localStorage.getItem('grupo'));
 
-    if (grupo > 0) {
-      // Mostrar todas las pruebas y quitar inicio, excluyendo las pruebas completadas
-      this.appPages = this.allPages.filter(page => {
-        if (page.url === '/inicio') return false;
-        const pruebaCompletada = localStorage.getItem(page.title.replace(' ', '').toLowerCase());
-        return !pruebaCompletada || pruebaCompletada === 'false';
-      });
-    } else {
-      // Mostrar solo inicio
+    if (grupo <= 0) {
+      // Mostrar solo Inicio si no hay grupo seleccionado
       this.appPages = this.allPages.filter(page => page.url === '/inicio');
+    } else {
+      // Verificar si todas las pruebas están completadas
+      const todasCompletadas = this.allPages.slice(1, 8).every(page => {
+        const pruebaCompletada = localStorage.getItem(page.title.replace(' ', '').toLowerCase());
+        return pruebaCompletada === 'true';
+      });
+
+      if (todasCompletadas) {
+        // Mostrar solo la página de Resolver si todas las pruebas están completadas
+        this.appPages = this.allPages.filter(page => page.url === '/resolver');
+      } else {
+        // Mostrar solo las pruebas incompletas
+        this.appPages = this.allPages.filter(page => {
+          if (page.url === '/resolver' || page.url === '/inicio') return false;
+          const pruebaCompletada = localStorage.getItem(page.title.replace(' ', '').toLowerCase());
+          return !pruebaCompletada || pruebaCompletada === 'false';
+        });
+      }
     }
   }
 

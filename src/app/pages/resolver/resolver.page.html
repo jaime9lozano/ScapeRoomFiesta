@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Resolver</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div style="height: 50px;"></div>
+  <div class="resolver-container">
+    <ion-input
+      [(ngModel)]="palabraIngresada"
+      placeholder="Introduce la palabra"
+      class="input-palabra"
+    ></ion-input>
+    <ion-button expand="block" (click)="verificarPalabra()">
+      Verificar
+    </ion-button>
+  </div>
+</ion-content>
