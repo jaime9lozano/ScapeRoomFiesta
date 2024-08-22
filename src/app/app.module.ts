@@ -17,6 +17,7 @@ import {Prueba5Page} from "./pages/prueba5/prueba5.page";
 import {Prueba6Page} from "./pages/prueba6/prueba6.page";
 import {Prueba7Page} from "./pages/prueba7/prueba7.page";
 import {HeaderComponent} from "./header/header.component";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -32,16 +33,17 @@ import {HeaderComponent} from "./header/header.component";
     Prueba6Page,
     Prueba7Page
   ],
-  imports: [
-    BrowserModule,
-    IonicModule.forRoot(),
-    AppRoutingModule,
-    CommonModule,
-    NgForOf,
-    RouterLink,
-    RouterLinkActive,
-    RouterOutlet,
-  ],
+    imports: [
+        BrowserModule,
+        IonicModule.forRoot(),
+        AppRoutingModule,
+        CommonModule,
+        NgForOf,
+        RouterLink,
+        RouterLinkActive,
+        RouterOutlet,
+        FormsModule,
+    ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

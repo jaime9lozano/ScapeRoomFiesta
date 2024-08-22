@@ -2,13 +2,85 @@ ion-title{
   font-family: 'Brush Script MT', serif;
 }
 ion-content {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
+  padding: 0; /* Asegúrate de que no haya padding adicional */
 }
 
 ion-button {
   --background: var(--ion-color-primary);
   --color: white;
   --border-radius: 8px;
+}
+ion-content {
+  position: relative;
+}
+
+.fondo-cuadrante {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Coloca las imágenes detrás del contenido */
+  gap: 0; /* Asegura que no haya espacio entre los cuadrantes */
+}
+
+.cuadrante {
+  background-size: cover; /* Ajusta la imagen para que se muestre completa */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
+
+.cuadrante1 {
+  background-image: url('/assets/img/cuadrante1.jpg'); /* Cambia la URL a la ubicación de tu imagen */
+  background-position: center; /* Centra la imagen en el contenedor */
+}
+
+.cuadrante2 {
+  background-image: url('/assets/img/cuadrante2.jpg'); /* Cambia la URL a la ubicación de tu imagen */
+  background-position: 70% center; /* Desplaza la imagen 70% a la derecha, centrado verticalmente */
+}
+
+.cuadrante3 {
+  background-image: url('/assets/img/cuadrante3.jpg'); /* Cambia la URL a la ubicación de tu imagen */
+  background-position: center; /* Centra la imagen en el contenedor */
+}
+
+.cuadrante4 {
+  background-image: url('/assets/img/cuadrante4.jpg'); /* Cambia la URL a la ubicación de tu imagen */
+  background-position: center; /* Centra la imagen en el contenedor */
+}
+
+.contenedor-palabra {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.8); /* Opcional: añadir un fondo para resaltar el contenedor */
+  padding: 20px;
+  border-radius: 10px; /* Opcional: redondear las esquinas del contenedor */
+}
+
+ion-input {
+  --color: black; /* Color del texto del input */
+}
+
+ion-input::part(native) {
+  color: black; /* Color del texto dentro del input */
+}
+
+ion-input::placeholder {
+  color: black; /* Color del placeholder */
+}
+
+.input-palabra {
+  margin-bottom: 20px;
+  width: 100%;
+  --padding-start: 0; /* Opcional: ajusta el padding si es necesario */
 }

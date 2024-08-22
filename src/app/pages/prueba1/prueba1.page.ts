@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
+import {AlertController} from "@ionic/angular";
 
 @Component({
   selector: 'app-prueba1',
@@ -7,8 +8,9 @@ import {Router} from "@angular/router";
   styleUrls: ['./prueba1.page.scss'],
 })
 export class Prueba1Page {
+  palabraIngresada: string = '';
 
-  constructor(private router: Router) { }
+  constructor(private alertController: AlertController,private router: Router) { }
 
   markAsCompleted() {
     // Marca la prueba actual como completada
@@ -30,6 +32,30 @@ export class Prueba1Page {
     this.router.navigate([siguienteRuta]).then(() => {
       window.location.reload();
     });
+  }
+
+  async verificarPalabra() {
+    if (this.palabraIngresada.toLowerCase() === 'h2o') {
+      await this.mostrarAlerta('Correcto', '¡Busca una piscina!', 'markAsCompleted');
+    } else {
+      await this.mostrarAlerta('Error', 'Palabra incorrecta. Inténtelo de nuevo.');
+    }
+  }
+
+  async mostrarAlerta(titulo: string, mensaje: string, metodo?: string) {
+    const alert = await this.alertController.create({
+      header: titulo,
+      message: mensaje,
+      buttons: [{
+        text: 'OK',
+        handler: () => {
+          if (metodo === 'markAsCompleted') {
+            this.markAsCompleted();
+          }
+        }
+      }]
+    });
+    await alert.present();
   }
 
 }
