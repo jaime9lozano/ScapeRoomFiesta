@@ -1,9 +1,26 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Prueba 4</ion-title>
+    <ion-title>Adivina la canción</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
-  <ion-button expand="block" (click)="markAsCompleted()">Marcar Prueba 4 como Superada</ion-button>
+  <div class="imagen">
+  <!-- Botón para reproducir la canción -->
+  <div class="audio-container">
+    <ion-button expand="block" (click)="playAudio()">Reproducir Canción</ion-button>
+    <audio #audioPlayer src="/assets/audio/macarena.mp3"></audio> <!-- Ruta a tu archivo de audio -->
+  </div>
+
+  <!-- Cuadro para ingresar el nombre de la canción -->
+  <div class="input-container">
+    <ion-input
+      [(ngModel)]="palabraIngresada"
+      placeholder="Introduce el nombre de la canción"
+      class="input-text"
+    ></ion-input>
+    <ion-button expand="block" (click)="verificarPalabra()">Verificar</ion-button>
+  </div>
+  </div>
 </ion-content>
+

@@ -15,7 +15,7 @@ export class Prueba2Page {
   markAsCompleted() {
     localStorage.setItem('prueba2', 'true');
     // Verifica cuáles pruebas están completadas
-    const pruebas = ['prueba1', 'prueba2', 'prueba3', 'prueba4', 'prueba5', 'prueba6', 'prueba7'];
+    const pruebas = ['prueba2', 'prueba3', 'prueba4', 'prueba5', 'prueba6', 'prueba7', 'prueba1'];
     let siguienteRuta = '/resolver';  // Ruta por defecto si todas están completadas
 
     for (const prueba of pruebas) {
