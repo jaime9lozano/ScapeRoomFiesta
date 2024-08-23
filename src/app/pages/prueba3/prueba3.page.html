@@ -1,9 +1,22 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Prueba 3</ion-title>
+    <ion-title>¿Que representa la imagen?</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
-  <ion-button expand="block" (click)="markAsCompleted()">Marcar Prueba 3 como Superada</ion-button>
+  <div class="imagen-container">
+    <ion-img src="/assets/img/yoga.jpg" class="imagen"></ion-img>
+    <!-- Cuadro para ingresar la palabra -->
+    <div class="input-container">
+      <ion-input
+        [(ngModel)]="palabraIngresada"
+        placeholder="Introduce la palabra"
+        class="input-text"
+      ></ion-input>
+      <ion-button expand="block" (click)="verificarPalabra()">
+        Verificar
+      </ion-button>
+    </div>
+  </div>
 </ion-content>

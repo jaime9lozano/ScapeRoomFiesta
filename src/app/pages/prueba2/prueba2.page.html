@@ -1,9 +1,29 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Prueba 2</ion-title>
+    <ion-title>Resuelve el refrán</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
-  <ion-button expand="block" (click)="markAsCompleted()">Marcar Prueba 2 como Superada</ion-button>
+  <div class="custom-background">
+  <!-- Refrán -->
+  <div class="refran-container">
+    <ion-text class="mystery-text">
+      Lebrón james es todo un galán. Siempre va a la brea con sus compañeros. Su juego lo firmaría hasta el mismisimo Claudio Coello.
+    </ion-text>
+  </div>
+
+  <!-- Cuadro para ingresar la palabra -->
+  <div class="contenedor-palabra">
+    <ion-input
+      [(ngModel)]="palabraIngresada"
+      placeholder="Introduce la palabra"
+      class="input-palabra"
+    ></ion-input>
+    <ion-button expand="block" (click)="verificarPalabra()">
+      Verificar
+    </ion-button>
+  </div>
+  </div>
 </ion-content>
+

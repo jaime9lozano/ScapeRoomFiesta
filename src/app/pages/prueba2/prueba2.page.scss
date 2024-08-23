@@ -7,8 +7,64 @@ ion-content {
   align-items: center;
 }
 
+ion-header {
+  --background: rgba(0, 0, 0, 0.8); /* Header oscuro */
+  --color: white;
+}
+
+ion-toolbar {
+  background-color: transparent;
+}
+
+.custom-background {
+  background-image: url('/assets/img/misterio.jpg'); /* Ruta a la imagen de fondo */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  height: 100%;
+}
+
+.refran-container {
+  text-align: center;
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  color: #ffeb3b; /* Color amarillo brillante */
+  text-shadow: 2px 2px 5px black; /* Sombra para dar un efecto más misterioso */
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente para resaltar el texto */
+  border-radius: 10px;
+}
+
+.mystery-text {
+  font-family: 'Creepster', cursive; /* Fuente misteriosa, se recomienda añadir esta fuente a tu proyecto */
+}
+
+.contenedor-palabra {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.8);
+}
+
+ion-input {
+  --color: black; /* Color del texto del input */
+  --placeholder-color: rgba(0, 0, 0, 0.6); /* Color del placeholder */
+}
+
+.input-palabra {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
 ion-button {
-  --background: var(--ion-color-primary);
+  --background: #ff5722; /* Naranja oscuro */
   --color: white;
   --border-radius: 8px;
+  --box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
+  font-weight: bold;
 }
