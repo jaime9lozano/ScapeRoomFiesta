@@ -18,7 +18,7 @@ export class Prueba4Page {
   }
 
   async verificarPalabra() {
-    if (this.palabraIngresada.toLowerCase() === 'macarena') {
+    if (this.palabraIngresada.toLowerCase() === 'viva la vida') {
       await this.mostrarAlerta('Correcto', '¡Tenéis que buscar en una discoteca!', 'markAsCompleted');
     } else {
       await this.mostrarAlerta('Error', 'Canción incorrecta. Inténtalo de nuevo.');
