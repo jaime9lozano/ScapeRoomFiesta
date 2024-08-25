@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
+import {AlertController} from "@ionic/angular";
 
 @Component({
   selector: 'app-prueba7',
@@ -7,8 +8,39 @@ import {Router} from "@angular/router";
   styleUrls: ['./prueba7.page.scss'],
 })
 export class Prueba7Page {
+  palabraIngresada: string = '';
+  images = [
+    '/assets/img/photo1.jpg',
+    '/assets/img/photo2.jpg',
+    '/assets/img/photo3.jpg',
+    '/assets/img/photo4.jpg',
+    '/assets/img/photo5.jpg'
+  ];
+  constructor(private alertController: AlertController,private router: Router) { }
 
-  constructor(private router: Router) { }
+  async verificarPalabra() {
+    if (this.palabraIngresada.trim().toLowerCase() === 'paella') {
+      await this.mostrarAlerta('Correcto', '¡Correcto! Tenéis que buscar a Jaime.', 'markAsCompleted');
+    } else {
+      await this.mostrarAlerta('Incorrecto', 'Incorrecta, prueba de nuevo.');
+    }
+  }
+
+  async mostrarAlerta(titulo: string, mensaje: string, metodo?: string) {
+    const alert = await this.alertController.create({
+      header: titulo,
+      message: mensaje,
+      buttons: [{
+        text: 'OK',
+        handler: () => {
+          if (metodo === 'markAsCompleted') {
+            this.markAsCompleted();
+          }
+        }
+      }]
+    });
+    await alert.present();
+  }
 
   markAsCompleted() {
     localStorage.setItem('prueba7', 'true');

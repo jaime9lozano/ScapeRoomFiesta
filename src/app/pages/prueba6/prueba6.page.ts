@@ -116,7 +116,7 @@ export class Prueba6Page implements OnInit{
     }
 
     if (respuestasCorrectas >= 6) {
-      await this.mostrarAlerta('¡Correcto!', `Has respondido correctamente ${respuestasCorrectas} de 10 preguntas.`, 'markAsCompleted');
+      await this.mostrarAlerta(`¡Correcto!, La letra de esta prueba es la: R`, `Has respondido correctamente ${respuestasCorrectas} de 10 preguntas.`, 'markAsCompleted');
     } else {
       await this.mostrarAlerta('No has superado la prueba', `Has respondido correctamente ${respuestasCorrectas} de 10 preguntas.`, 'reiniciarPrueba');
     }

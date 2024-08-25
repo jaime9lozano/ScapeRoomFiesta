@@ -7,7 +7,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./inicio.page.scss'],
 })
 export class InicioPage  {
-  public grupos: number[] = [1, 2, 3, 4, 5];
+  public grupos: number[] = [1, 2, 3, 4, 5, 6];
   constructor(private router: Router) { }
   seleccionarGrupo(grupo: number) {
     localStorage.setItem('tiempo', Date.now().toString());
