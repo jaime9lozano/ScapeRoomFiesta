@@ -5,5 +5,17 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
-  <ion-button expand="block" (click)="markAsCompleted()">Marcar Prueba 6 como Superada</ion-button>
+  <div *ngFor="let pregunta of preguntas; let i = index">
+    <div class="pregunta-container">
+      <p>{{ pregunta.texto }}</p>
+      <ion-radio-group [(ngModel)]="respuestas[i]">
+        <ion-item *ngFor="let opcion of pregunta.opciones">
+          <ion-label>{{ opcion }}</ion-label>
+          <ion-radio slot="start" [value]="opcion"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </div>
+  </div>
+
+  <ion-button expand="block" (click)="verificarRespuestas()">Verificar Respuestas</ion-button>
 </ion-content>

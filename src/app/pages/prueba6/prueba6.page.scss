@@ -1,13 +1,30 @@
-ion-title{
+ion-title {
   font-family: 'Brush Script MT', serif;
-}ion-content {
-   display: flex;
-   justify-content: center;
-   align-items: center;
- }
+}
+
+ion-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 ion-button {
   --background: var(--ion-color-primary);
   --color: white;
   --border-radius: 8px;
+}
+
+.pregunta-container {
+  margin-bottom: 20px;
+}
+
+ion-item {
+  --background: var(--ion-item-background, #ffffff); /* Fondo de las opciones, se adapta a ambos modos */
+  --border-radius: 8px;
+  margin-bottom: 10px;
+  --color: var(--ion-text-color, #000000); /* Color del texto, se adapta a ambos modos */
+}
+
+.opcion-label {
+  color: var(--ion-text-color, #000000); /* Se adapta a ambos modos */
 }
