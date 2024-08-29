@@ -2,17 +2,38 @@ ion-content {
   padding-top: 20px;
 }
 
+.background-img {
+  width: 100%;
+  height: auto; /* Permite que la imagen mantenga su proporción */
+  margin-bottom: 20px; /* Espacio debajo de la imagen */
+}
+
 .resolver-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+  position: relative;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente para resaltar el contenido */
   padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 300px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .input-palabra {
   margin-bottom: 20px;
   width: 100%;
+}
+
+ion-input {
+  --color: black;
+  --placeholder-color: gray;
+  margin-bottom: 20px;
+}
+
+ion-button {
+  --background: var(--ion-color-primary);
+  --color: white;
+  --border-radius: 8px;
 }
 
